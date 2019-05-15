@@ -1,0 +1,45 @@
+/**
+* Login($identifier, $password)
+* @param $identifier - 
+* @param  $password - 
+*/
+function Login($identifier, $password){
+	_windowAction("maximize");
+	_setValue(_emailbox("identifier"), $identifier);
+	_click(_span("Next"));
+	_setPassword(_password("password"), $password);
+	_click(_span("Next"))
+		}
+
+/**
+* GenerateProposal($search_box,$value, $DealID, $20000)
+* @param $search_box - 
+* @value - 
+* @param  $DealID - 
+* @param  $20000 - 
+*/
+function GenerateProposal($search_box, $value, $DealID, $20000){
+	_setValue(_searchbox("search-box"), $search_box);
+	_click(_listItem($value));
+	_click(_div("SEARCH TRIPS"));
+	_click(_span("EDIT"));
+	_setValue(_textbox(0), $DealID);
+	_click(_link("CREATE PROPOSAL"));
+	_wait($20000, _isVisible(_div("fabs")));
+	_click(_div("fabs"));
+	//_click(_svg_path(115));
+	_wait($20000, _isVisible(_label("GENERATE PROPOSAL")));
+	_click(_label("GENERATE PROPOSAL"));
+	_wait($20000, _isVisible(_link("CONFIRM TO PROCEED")));
+	_click(_link("CONFIRM TO PROCEED"));
+	_click(_link("DELETE MULTIPLE"));
+	_click(_span("box"));
+	_click(_span("box[1]"));
+	_click(_link("DELETE"));
+	_click(_div("masterfab[1]"));
+	_click(_label("GENERATE PROPOSAL"));
+	_click(_link("CONFIRM TO PROCEED"));
+}
+
+
+
